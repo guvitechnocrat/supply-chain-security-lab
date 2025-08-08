@@ -16,10 +16,10 @@ jobs:
         with:
           python-version: '3.9'
       - name: Install dependencies
-        run: pip install -r app/requirements.txt
+        run: pip install -r requirements.txt
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/python@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          args: --file=app/requirements.txt --severity-threshold=medium
+          args: --file=requirements.txt --severity-threshold=medium
